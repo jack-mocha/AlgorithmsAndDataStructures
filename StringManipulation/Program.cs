@@ -10,6 +10,8 @@ namespace StringManipulation
     {
         static void Main(string[] args)
         {
+            var input = "hello";
+            var reversed = StringUtils.ReverseString(input);
         }
     }
 }
