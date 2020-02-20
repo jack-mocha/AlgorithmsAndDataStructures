@@ -10,6 +10,7 @@ namespace AlgorithmsAndDataStructures
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
