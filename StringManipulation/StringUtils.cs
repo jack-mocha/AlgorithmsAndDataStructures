@@ -129,5 +129,47 @@ namespace StringManipulation
 
             return count;
         }
+
+        /// <summary>
+        /// References:
+        /// [1] https://www.geeksforgeeks.org/collections-in-c-sharp/
+        /// [2] https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/collections
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public string ReverseWords(string input)
+        {
+            if (String.IsNullOrWhiteSpace(input))
+                return String.Empty;
+
+            var words = input.Trim().Split(new char[] { ' ' });
+            var sb = new StringBuilder(input.Length);
+            for(int i = words.Length - 1; i >= 0; i--)
+            {
+                sb.Append(words[i]);
+                if(i != 0)
+                    sb.Append(" ");
+            }
+
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// References:
+        /// [1] https://www.geeksforgeeks.org/c-sharp-arrays/
+        /// [2] https://www.geeksforgeeks.org/c-sharp-array-class/
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public string ReverseWords2(string input)
+        {
+            if (String.IsNullOrWhiteSpace(input))
+                return String.Empty;
+
+            var words = input.Trim().Split(new char[] { ' ' });
+            Array.Reverse(words);
+            
+            return String.Join(" ", words);
+        }
     }
 }
