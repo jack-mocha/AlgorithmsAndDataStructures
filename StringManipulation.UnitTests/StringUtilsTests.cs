@@ -61,5 +61,37 @@ namespace StringManipulation.UnitTests
 
             Assert.That(result, Is.EqualTo(expectedResult));
         }
+
+        [Test]
+        [TestCase(null, "")]
+        [TestCase("", "")]
+        [TestCase("   ", "")]
+        [TestCase("Trees are beautiful", "beautiful are Trees")]
+        [TestCase("   Trees are beautiful", "beautiful are Trees")]
+        [TestCase("Trees are beautiful   ", "beautiful are Trees")]
+        [TestCase("Trees   are beautiful", "beautiful are   Trees")]
+        [TestCase("Trees", "Trees")]
+        public void ReverseWords_WhenCalled_ReturnReversedWords(string input, string expectedResult)
+        {
+            var result = _stringUtils.ReverseWords(input);
+
+            Assert.That(result, Is.EqualTo(expectedResult));
+        }
+
+        [Test]
+        [TestCase(null, "")]
+        [TestCase("", "")]
+        [TestCase("   ", "")]
+        [TestCase("Trees are beautiful", "beautiful are Trees")]
+        [TestCase("   Trees are beautiful", "beautiful are Trees")]
+        [TestCase("Trees are beautiful   ", "beautiful are Trees")]
+        [TestCase("Trees   are beautiful", "beautiful are   Trees")]
+        [TestCase("Trees", "Trees")]
+        public void ReverseWords2_WhenCalled_ReturnReversedWords(string input, string expectedResult)
+        {
+            var result = _stringUtils.ReverseWords2(input);
+
+            Assert.That(result, Is.EqualTo(expectedResult));
+        }
     }
 }
