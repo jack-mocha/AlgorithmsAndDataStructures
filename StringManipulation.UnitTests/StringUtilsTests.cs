@@ -6,82 +6,60 @@ namespace StringManipulation.UnitTests
     [TestFixture]
     public class StringUtilsTests
     {
-        [Test]
-        public void ReverseString3_NullString_ReturnsEmptyString()
-        {
-            var stringUtils = new StringUtils();
-            string input = null;
+        private StringUtils _stringUtils;
 
-            var result = stringUtils.ReverseString3(input);
-            
-            Assert.That(result, Is.EqualTo(String.Empty));
+        [SetUp]
+        public void Setup()
+        {
+            _stringUtils = new StringUtils();
         }
 
         [Test]
-        public void ReverseString3_EmptyString_ReturnsEmptyString()
+        [TestCase(null, "")]
+        [TestCase("", "")]
+        [TestCase("   ", "")]
+        [TestCase("Hello", "olleH")]
+        public void ReverseString_WhenCalled_ReturnsReversedString(string input, string expectedResult)
         {
-            var stringUtils = new StringUtils();
-            string input = String.Empty;
+            var result = _stringUtils.ReverseString(input);
 
-            var result = stringUtils.ReverseString3(input);
-
-            Assert.That(result, Is.EqualTo(String.Empty));
+            Assert.That(result, Is.EqualTo(expectedResult));
         }
 
         [Test]
-        public void ReverseString3_Hello_ReturnsolleH()
+        [TestCase(null, "")]
+        [TestCase("", "")]
+        [TestCase("   ", "")]
+        [TestCase("Hello", "olleH")]
+        public void ReverseString2_WhenCalled_ReturnsReversedString(string input, string expectedResult)
         {
-            var stringUtils = new StringUtils();
-            string input = "Hello";
+            var result = _stringUtils.ReverseString2(input);
 
-            var result = stringUtils.ReverseString3(input);
-
-            Assert.That(result, Is.EqualTo("olleH"));
+            Assert.That(result, Is.EqualTo(expectedResult));
         }
 
         [Test]
-        public void CountVowels_NullString_ReturnsZero()
+        [TestCase(null, "")]
+        [TestCase("", "")]
+        [TestCase("   ", "")]
+        [TestCase("Hello", "olleH")]
+        public void ReverseString3_WhenCalled_ReturnsReversedString(string input, string expectedResult)
         {
-            var stringUtils = new StringUtils();
-            string input = null;
+            var result = _stringUtils.ReverseString3(input);
 
-            var result = stringUtils.CountVowels(input);
-
-            Assert.That(result, Is.EqualTo(0));
+            Assert.That(result, Is.EqualTo(expectedResult));
         }
 
         [Test]
-        public void CountVowels_EmptyString_ReturnsZero()
+        [TestCase(null, 0)]
+        [TestCase("", 0)]
+        [TestCase("   ", 0)]
+        [TestCase("HaeiouHAEIOUh", 10)]
+        public void CountVowels_WhenCalled_ReturnsNumberOfVowels(string input, int expectedResult)
         {
-            var stringUtils = new StringUtils();
-            string input = String.Empty;
+            var result = _stringUtils.CountVowels(input);
 
-            var result = stringUtils.CountVowels(input);
-
-            Assert.That(result, Is.EqualTo(0));
-        }
-
-
-        [Test]
-        public void CountVowels_WhiteSpaceString_ReturnsZero()
-        {
-            var stringUtils = new StringUtils();
-            string input = "     ";
-
-            var result = stringUtils.CountVowels(input);
-
-            Assert.That(result, Is.EqualTo(0));
-        }
-
-        [Test]
-        public void CountVowels_HaeiouHAEIOUh_ReturnsTen()
-        {
-            var stringUtils = new StringUtils();
-            string input = "HaeiouHAEIOUh";
-
-            var result = stringUtils.CountVowels(input);
-
-            Assert.That(result, Is.EqualTo(10));
+            Assert.That(result, Is.EqualTo(expectedResult));
         }
     }
 }

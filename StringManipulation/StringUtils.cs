@@ -131,6 +131,8 @@ namespace StringManipulation
         }
 
         /// <summary>
+        /// This method split the input string by a delimiter and iterate through the array from the tail to the head.
+        /// During the iteration, each string is added to the StringBuilder.
         /// References:
         /// [1] https://www.geeksforgeeks.org/collections-in-c-sharp/
         /// [2] https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/collections
@@ -147,7 +149,7 @@ namespace StringManipulation
             for(int i = words.Length - 1; i >= 0; i--)
             {
                 sb.Append(words[i]);
-                if(i != 0)
+                if(i != 0) //Instead of doing this, we can also use TrimEnd().
                     sb.Append(" ");
             }
 
@@ -155,6 +157,8 @@ namespace StringManipulation
         }
 
         /// <summary>
+        /// This method split the input string by a delmiter, and uses the Array utility method to reverse the array.
+        /// Once the array is reversed, it uses the Join method to concatenate each string.
         /// References:
         /// [1] https://www.geeksforgeeks.org/c-sharp-arrays/
         /// [2] https://www.geeksforgeeks.org/c-sharp-array-class/
