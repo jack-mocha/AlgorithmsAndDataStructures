@@ -175,5 +175,45 @@ namespace StringManipulation
             
             return String.Join(" ", words);
         }
+
+        public bool AreRotations(string str1, string str2)
+        {
+            if (str1 == null || str2 == null)
+                return false;
+            if (str1.Length != str2.Length)
+                return false;
+
+            if (!(str1 + str1).Contains(str2))
+                return false;
+
+            return true;
+        }
+
+        /// <summary>
+        /// This method removes duplicate char of the input string by 
+        /// iterating through the string and check if the current char is in the set.
+        /// None duplicate char are saved to the set and the StringBuilder.
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public string RemoveDuplicates(string str)
+        {
+            if (String.IsNullOrEmpty(str))
+                return String.Empty;
+
+            var seen = new HashSet<char>();
+            var sb = new StringBuilder(str.Length);
+
+            foreach(var s in str)
+            {
+                if (!seen.Contains(s))
+                {
+                    seen.Add(s);
+                    sb.Append(s);
+                }
+            }
+
+            return sb.ToString();
+        }
     }
 }
