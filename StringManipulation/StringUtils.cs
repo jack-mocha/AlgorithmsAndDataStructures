@@ -176,6 +176,12 @@ namespace StringManipulation
             return String.Join(" ", words);
         }
 
+        /// <summary>
+        /// This method determines whether 2 strings are rotations
+        /// </summary>
+        /// <param name="str1"></param>
+        /// <param name="str2"></param>
+        /// <returns></returns>
         public bool AreRotations(string str1, string str2)
         {
             if (str1 == null || str2 == null)
