@@ -353,5 +353,48 @@ namespace StringManipulation
 
             return String.Join(" ", words);
         }
+
+        /// <summary>
+        /// This method finds out if the input strings are anagrams
+        /// by first storing every char and the frequency of the first string in a dictionary.
+        /// Then subtract the frequency of the char when iterating through the second string.
+        /// Finally, if the count of the key value pair in the dictionary is 0, these 2 strings are anagrams.
+        /// </summary>
+        /// <param name="str1"></param>
+        /// <param name="str2"></param>
+        /// <returns></returns>
+        public bool AreAnagrams(string str1, string str2)
+        {
+            if (str1 == null || str2 == null)
+                return false;
+            if (str1.Length != str2.Length)
+                return false;
+
+            var dictionary = new Dictionary<char, int>();
+            foreach(var s in str1)
+            {
+                if (!dictionary.ContainsKey(s))
+                    dictionary.Add(s, 1);
+                else
+                    dictionary[s]++;
+            }
+
+            foreach(var s in str2)
+            {
+                if (!dictionary.ContainsKey(s))
+                    return false;
+                else
+                {
+                    dictionary[s]--;
+                    if (dictionary[s] == 0)
+                        dictionary.Remove(s);
+                }
+            }
+
+            if (dictionary.Count != 0)
+                return false;
+            else
+                return true;
+        }
     }
 }
