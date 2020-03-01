@@ -10,6 +10,8 @@ namespace StringManipulation
     {
         static void Main(string[] args)
         {
+            var s = new StringUtils();
+            var bla = s.FindMostRepeatedChar2("Hellooo");
         }
     }
 }

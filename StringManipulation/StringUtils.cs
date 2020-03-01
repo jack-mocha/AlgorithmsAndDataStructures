@@ -221,5 +221,78 @@ namespace StringManipulation
 
             return sb.ToString();
         }
+
+        /// <summary>
+        /// This method finds the most repeated char in an input string
+        /// by first storing the frequency of the char in a dictionary, and
+        /// by iterating through the dictionary to find the highest frequency/char;
+        /// 
+        /// Note:
+        ///     Keep in mind that Dictionary.ContainsValue is O(n);
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public char FindMostRepeatedChar(string str)
+        {
+            if (String.IsNullOrEmpty(str))
+                throw new ArgumentException();
+
+            var dictionary = new Dictionary<char, int>();
+
+            foreach(var s in str)
+            {
+                if (!dictionary.ContainsKey(s))
+                    dictionary.Add(s, 1);
+                else
+                    dictionary[s]++;
+            }
+
+            var max = 0;
+            var result = '\0';
+            foreach(var d in dictionary)
+            {
+                if (d.Value > max)
+                {
+                    max = d.Value;
+                    result = d.Key;
+                }
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// This method finds the most repeated char in an input string
+        /// by first storing the frequency of the char in a ASCII_Table array, and
+        /// by iterating through the array to find the highest frequency/char;
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public char FindMostRepeatedChar2(string str)
+        {
+            if (String.IsNullOrEmpty(str))
+                throw new ArgumentException();
+
+            var ASCIISize = 256; //Because the size of ASCII table is 256.
+            int[] frequecy = new int[ASCIISize];
+            
+            foreach(var s in str)
+            {
+                frequecy[s]++;
+            }
+
+            var max = 0;
+            var result = '\0';
+            for(int i = 0; i < frequecy.Length; i++)
+            {
+                if(frequecy[i] > max)
+                {
+                    max = frequecy[i];
+                    result = (char)i;
+                }
+            }
+
+            return result;
+        }
     }
 }

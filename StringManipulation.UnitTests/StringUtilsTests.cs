@@ -124,5 +124,43 @@ namespace StringManipulation.UnitTests
 
             Assert.That(result, Is.EqualTo(expectedResult));
         }
+
+        [Test]
+        [TestCase("   ", ' ')]
+        [TestCase("hellooo", 'o')]
+        [TestCase("Trees are beautiful", 'e')]
+        public void FindMostRepeatedChar_WhenCalled_ReturnsMostRepeatedChar(string str, char expectedResult)
+        {
+            var result = _stringUtils.FindMostRepeatedChar(str);
+
+            Assert.That(result, Is.EqualTo(expectedResult));
+        }
+
+        [Test]
+        [TestCase(null)]
+        [TestCase("")]
+        public void FindMostRepeatedChar_InvalidError_ThrowArgumentException(string str)
+        {
+            Assert.That(() => _stringUtils.FindMostRepeatedChar(str), Throws.ArgumentException);
+        }
+
+        [Test]
+        [TestCase("   ", ' ')]
+        [TestCase("hellooo", 'o')]
+        [TestCase("Trees are beautiful", 'e')]
+        public void FindMostRepeatedChar2_WhenCalled_ReturnsMostRepeatedChar(string str, char expectedResult)
+        {
+            var result = _stringUtils.FindMostRepeatedChar2(str);
+
+            Assert.That(result, Is.EqualTo(expectedResult));
+        }
+
+        [Test]
+        [TestCase(null)]
+        [TestCase("")]
+        public void FindMostRepeatedChar2_InvalidError_ThrowArgumentException(string str)
+        {
+            Assert.That(() => _stringUtils.FindMostRepeatedChar2(str), Throws.ArgumentException);
+        }
     }
 }
