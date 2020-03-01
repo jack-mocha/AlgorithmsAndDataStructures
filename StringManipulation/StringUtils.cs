@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace StringManipulation
@@ -293,6 +294,64 @@ namespace StringManipulation
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// This method capitalize every word of a sentence, but does not lowercase the rest of the word.
+        /// For example, trees ARE beautiful. -> Trees ARE Beautiful.
+        /// It uses ASCII to convert lower case character to upper case, 
+        /// and an index to trace the first char of a string.
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public string CapitalizeSentence(string str)
+        {
+            if (String.IsNullOrWhiteSpace(str))
+                return String.Empty;
+
+            var words = str.Trim().Split(new char[] { ' ' }); //To trim leading and tailing white space.
+            var sb = new StringBuilder(str.Length);
+            var idx = 0; //To keep track of which character to capitalize.
+            for(int i = 0; i < words.Length; i++)
+            {
+                if(!words[i].Equals(String.Empty))
+                {
+                    sb.Append(words[i]);
+                    if(!(sb[idx] >= 65 && sb[idx] <= 90)) //Check if first char is already upper case.
+                        sb[idx] = (char)(sb[idx] - 32);
+                    
+                    if (i != words.Length - 1)
+                        sb.Append(" ");
+
+                    idx += (words[i].Length + 1); //1 is the legnth of space.
+                }
+            }
+
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// This method capitalize every word of a sentence and lower case the rest of the word.
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public string CapitalizeSentence2(string str)
+        {
+            if (String.IsNullOrWhiteSpace(str))
+                return String.Empty;
+
+            str = str.Trim();
+            var reg = new Regex(" +"); //one ore more space
+            str = reg.Replace(str, " ");
+
+            var words = str.Split(new char[] { ' ' });
+            for (int i = 0; i < words.Length; i++)
+            {
+                if (!words[i].Equals(String.Empty))
+                    words[i] = words[i].Substring(0, 1).ToUpper()+ words[i].Substring(1).ToLower();
+            }
+
+            return String.Join(" ", words);
         }
     }
 }

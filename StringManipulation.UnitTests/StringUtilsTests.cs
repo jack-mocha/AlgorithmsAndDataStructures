@@ -162,5 +162,35 @@ namespace StringManipulation.UnitTests
         {
             Assert.That(() => _stringUtils.FindMostRepeatedChar2(str), Throws.ArgumentException);
         }
+
+        [Test]
+        [TestCase(null, "")]
+        [TestCase("", "")]
+        [TestCase("   ", "")]
+        [TestCase("trees are beautiful.", "Trees Are Beautiful.")]
+        [TestCase("   trees are beautiful.   ", "Trees Are Beautiful.")]
+        [TestCase("trees   are  BEAUTIFUL.", "Trees Are BEAUTIFUL.")]
+        [TestCase("   trees   ARE  beautiful.   ", "Trees ARE Beautiful.")]
+        public void CapitalizeSentence_WhenCalled_ReturnsCapitalizedSentence(string str, string expectedResult)
+        {
+            var result = _stringUtils.CapitalizeSentence(str);
+
+            Assert.That(result, Is.EqualTo(expectedResult));
+        }
+
+        [Test]
+        [TestCase(null, "")]
+        [TestCase("", "")]
+        [TestCase("   ", "")]
+        [TestCase("trees are beautiful.", "Trees Are Beautiful.")]
+        [TestCase("   trees are beautiful.   ", "Trees Are Beautiful.")]
+        [TestCase("trees   are  beautiful.", "Trees Are Beautiful.")]
+        [TestCase("   trees   ARE  beautiful.   ", "Trees Are Beautiful.")]
+        public void CapitalizeSentence2_WhenCalled_ReturnsCapitalizedSentence(string str, string expectedResult)
+        {
+            var result = _stringUtils.CapitalizeSentence2(str);
+
+            Assert.That(result, Is.EqualTo(expectedResult));
+        }
     }
 }
