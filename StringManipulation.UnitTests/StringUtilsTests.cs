@@ -211,5 +211,24 @@ namespace StringManipulation.UnitTests
 
             Assert.That(result, Is.EqualTo(expectedResult));
         }
+
+        [Test]
+        [TestCase(null, null, false)]
+        [TestCase(null, "ABC", false)]
+        [TestCase("ABC", "ABCD", false)]
+        [TestCase("", "", true)]
+        [TestCase("ABC", "CBA", true)]
+        [TestCase("ABC", "", false)]
+        [TestCase("ABC", " ", false)]
+        [TestCase("ABC", null, false)]
+        [TestCase("ABC", "CBD", false)]
+        [TestCase("AbC", "CBA", true)]
+        [TestCase("AAABBC", "CAAABB", true)]
+        public void AreAnagrams2_WhenCalled_ReturnsAreAnagramsOrNot(string str1, string str2, bool expectedResult)
+        {
+            var result = _stringUtils.AreAnagrams2(str1, str2);
+
+            Assert.That(result, Is.EqualTo(expectedResult));
+        }
     }
 }

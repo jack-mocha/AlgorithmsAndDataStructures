@@ -348,7 +348,7 @@ namespace StringManipulation
             for (int i = 0; i < words.Length; i++)
             {
                 if (!words[i].Equals(String.Empty))
-                    words[i] = words[i].Substring(0, 1).ToUpper()+ words[i].Substring(1).ToLower();
+                    words[i] = words[i].Substring(0, 1).ToUpper() + words[i].Substring(1).ToLower();
             }
 
             return String.Join(" ", words);
@@ -359,6 +359,9 @@ namespace StringManipulation
         /// by first storing every char and the frequency of the first string in a dictionary.
         /// Then subtract the frequency of the char when iterating through the second string.
         /// Finally, if the count of the key value pair in the dictionary is 0, these 2 strings are anagrams.
+        /// 
+        /// Note:  
+        ///     str1 and str2 are case sensitive. e.g.abc != ABC
         /// </summary>
         /// <param name="str1"></param>
         /// <param name="str2"></param>
@@ -395,6 +398,39 @@ namespace StringManipulation
                 return false;
             else
                 return true;
+        }
+
+        /// <summary>
+        /// This method finds out if the input strings are anagrams
+        /// by first sorting str1 and str2.
+        /// Then compare two arrays.
+        /// 
+        /// Note: 
+        ///     str1 and str2 are case insensitive. e.g.abc == ABC
+        /// </summary>
+        /// <param name="str1"></param>
+        /// <param name="str2"></param>
+        /// <returns></returns>
+        public bool AreAnagrams2(string str1, string str2)
+        {
+            if (str1 == null || str2 == null)
+                return false;
+            if (str1.Length != str2.Length)
+                return false;
+
+            var arr1 = str1.ToLower().ToCharArray();
+            Array.Sort(arr1);
+
+            var arr2 = str2.ToLower().ToCharArray();
+            Array.Sort(arr2);
+
+            for(int i=0; i<arr1.Length; i++)
+            {
+                if (arr1[i] != arr2[i])
+                    return false;
+            }
+
+            return true;
         }
     }
 }
