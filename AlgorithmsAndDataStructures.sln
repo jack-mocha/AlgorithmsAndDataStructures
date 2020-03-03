@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringManipulation.UnitTest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchingAlgorithms", "SearchingAlgorithms\SearchingAlgorithms.csproj", "{1AF49682-EEB9-431C-9B91-91EBB72C02FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchingAlgorithms.UnitTests", "SearchingAlgorithms.UnitTests\SearchingAlgorithms.UnitTests.csproj", "{4754E71D-B7A0-4909-A265-19207B4FC440}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1AF49682-EEB9-431C-9B91-91EBB72C02FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AF49682-EEB9-431C-9B91-91EBB72C02FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AF49682-EEB9-431C-9B91-91EBB72C02FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4754E71D-B7A0-4909-A265-19207B4FC440}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4754E71D-B7A0-4909-A265-19207B4FC440}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4754E71D-B7A0-4909-A265-19207B4FC440}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4754E71D-B7A0-4909-A265-19207B4FC440}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
