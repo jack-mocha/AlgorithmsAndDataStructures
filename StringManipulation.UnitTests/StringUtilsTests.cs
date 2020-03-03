@@ -230,5 +230,20 @@ namespace StringManipulation.UnitTests
 
             Assert.That(result, Is.EqualTo(expectedResult));
         }
+
+        [Test]
+        [TestCase(null, false)]
+        [TestCase("", true)]
+        [TestCase("   ", true)]
+        [TestCase("ABBA", true)]
+        [TestCase("ABCBA", true)]
+        [TestCase("ABCAB", false)]
+        [TestCase("ABba", false)]
+        public void IsPalindrome_WhenCalled_ReturnsIsPalindromeOrNot(string str, bool expectedResult)
+        {
+            var result = _stringUtils.IsPalindrome(str);
+
+            Assert.That(result, Is.EqualTo(expectedResult));
+        }
     }
 }

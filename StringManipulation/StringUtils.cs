@@ -432,5 +432,35 @@ namespace StringManipulation
 
             return true;
         }
+
+        /// <summary>
+        /// This method determines if an input string is palindrome by having 2 pointers. 
+        /// 1 from the begining of the string and the other form the end of the string.
+        /// 
+        /// Solution is case sensitive.
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public bool IsPalindrome(string str)
+        {
+            if (str == null)
+                return false;
+            if (String.IsNullOrWhiteSpace(str))
+                return true;
+
+            var left = 0;
+            var right = str.Length - 1;
+
+            while(right > left)
+            {
+                if (str[left] != str[right])
+                    return false;
+
+                left++;
+                right--;
+            }
+
+            return true;
+        }
     }
 }
