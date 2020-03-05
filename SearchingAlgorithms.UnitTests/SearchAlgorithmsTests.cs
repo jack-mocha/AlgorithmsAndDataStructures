@@ -25,5 +25,31 @@ namespace SearchingAlgorithms.UnitTests
 
             Assert.That(result, Is.EqualTo(expectedResult));
         }
+
+        [Test]
+        [TestCase(null, 5, -1)]
+        [TestCase(new int[] { }, 5, -1)]
+        [TestCase(new int[] { 1, 5, 10, 15, 20, 25 }, 5, 1)]
+        [TestCase(new int[] { 1, 5, 10, 15, 20, 25 }, 4, -1)]
+        [TestCase(new int[] { 1, 5, 10, 15, 20, 25 }, 6, -1)]
+        public void BinarySearchRecursive_WhenCalled_ReturnsTargetIndexInTheArray(int[] array, int target, int expectedResult)
+        {
+            var result = _search.BinarySearchRecursive(array, target);
+
+            Assert.That(result, Is.EqualTo(expectedResult));
+        }
+
+        [Test]
+        [TestCase(null, 5, -1)]
+        [TestCase(new int[] { }, 5, -1)]
+        [TestCase(new int[] { 1, 5, 10, 15, 20, 25 }, 5, 1)]
+        [TestCase(new int[] { 1, 5, 10, 15, 20, 25 }, 4, -1)]
+        [TestCase(new int[] { 1, 5, 10, 15, 20, 25 }, 6, -1)]
+        public void BinarySearchIterative_WhenCalled_ReturnsTargetIndexInTheArray(int[] array, int target, int expectedResult)
+        {
+            var result = _search.BinarySearchIterative(array, target);
+
+            Assert.That(result, Is.EqualTo(expectedResult));
+        }
     }
 }
