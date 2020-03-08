@@ -9,7 +9,7 @@ namespace SortingAlgorithms
     public class BubbleSort
     {
         /// <summary>
-        /// Every iteration, we bring the next biggest item to the correct position.
+        /// Every iteration, we bring the next biggest item to the correct position. (to the right end)
         /// 
         /// Time Complexity:
         ///     Best Case: O(1) pass * O(n) comparison = O(n)
