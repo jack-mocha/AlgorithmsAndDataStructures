@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringManipulation.UnitTest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns", "DesignPatterns\DesignPatterns.csproj", "{A0B3AA9A-FE37-4A91-98AD-2C29DFCE29A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.UnitTests", "DesignPatterns.UnitTests\DesignPatterns.UnitTests.csproj", "{C8CBEF9B-8011-46FD-8DBD-B112F9D30104}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{A0B3AA9A-FE37-4A91-98AD-2C29DFCE29A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0B3AA9A-FE37-4A91-98AD-2C29DFCE29A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0B3AA9A-FE37-4A91-98AD-2C29DFCE29A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8CBEF9B-8011-46FD-8DBD-B112F9D30104}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8CBEF9B-8011-46FD-8DBD-B112F9D30104}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8CBEF9B-8011-46FD-8DBD-B112F9D30104}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8CBEF9B-8011-46FD-8DBD-B112F9D30104}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
