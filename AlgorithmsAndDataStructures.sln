@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringManipulation.UnitTest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures", "DataStructures\DataStructures.csproj", "{2AC78509-2D14-44E8-9E52-6D951CC557BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures.UnitTests", "DataStructures.UnitTests\DataStructures.UnitTests.csproj", "{164EBDC3-2C8C-43CF-9CFB-C9E76FFF0FA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{2AC78509-2D14-44E8-9E52-6D951CC557BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AC78509-2D14-44E8-9E52-6D951CC557BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AC78509-2D14-44E8-9E52-6D951CC557BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{164EBDC3-2C8C-43CF-9CFB-C9E76FFF0FA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{164EBDC3-2C8C-43CF-9CFB-C9E76FFF0FA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{164EBDC3-2C8C-43CF-9CFB-C9E76FFF0FA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{164EBDC3-2C8C-43CF-9CFB-C9E76FFF0FA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
