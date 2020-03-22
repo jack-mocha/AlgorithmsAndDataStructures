@@ -6,7 +6,14 @@ namespace DataStructures
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var tree = new Tree();
+            tree.Insert(1);
+            
+            //var b = new B();
+            //b.Show();
+
+            //var c = new C();
+            //c.Show();
         }
     }
 }
