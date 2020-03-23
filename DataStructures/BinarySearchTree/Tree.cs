@@ -81,5 +81,67 @@ namespace DataStructures
             return false;
         }
 
+        public void TraversePreOrder()
+        {
+            TraversePreOrder(root);
+        }
+
+        private void TraversePreOrder(Node root)
+        {
+            if (root == null)
+                return;
+
+            Console.WriteLine(root.value);
+            TraversePreOrder(root.leftChild);
+            TraversePreOrder(root.rightChild);
+        }
+
+        public void TraverseInOrder()
+        {
+            TraverseInOrder();
+        }
+
+        private void TraverseInOrder(Node root)
+        {
+            if (root == null)
+                return;
+
+            TraverseInOrder(root.leftChild);
+            Console.WriteLine(root.value);
+            TraverseInOrder(root.rightChild);
+        }
+
+        public void TraversePostOrder()
+        {
+
+        }
+
+        private void TraversePostOrder(Node root)
+        {
+            if (root == null)
+                return;
+
+            TraversePostOrder(root.leftChild);
+            TraversePostOrder(root.rightChild);
+            Console.WriteLine(root.value);
+        }
+
+        //Height of a node is the longest distance between leaf and the node
+        //Depth of a node is the distance between root and the node
+        public int Height()
+        {
+            return Height(root);
+        }
+
+        private int Height(Node root)
+        {
+            if (root == null)
+                return -1;
+
+            if (root.leftChild == null && root.rightChild == null)
+                return 0;
+
+            return 1 + Math.Max(Height(root.leftChild), Height(root.rightChild));
+        }
     }
 }
