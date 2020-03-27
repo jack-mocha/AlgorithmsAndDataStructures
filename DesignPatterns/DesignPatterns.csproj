@@ -49,6 +49,11 @@
     <Compile Include="Memento\History.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="State\BrushTool.cs" />
+    <Compile Include="State\Canvas.cs" />
+    <Compile Include="State\SelectionTool.cs" />
+    <Compile Include="State\Tool.cs" />
+    <Compile Include="State\ToolType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
