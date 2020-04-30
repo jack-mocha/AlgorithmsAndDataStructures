@@ -54,8 +54,11 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IteratorUnitTests.cs" />
     <Compile Include="MementoUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StateUnitTests.cs" />
+    <Compile Include="StrategyUnitTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
