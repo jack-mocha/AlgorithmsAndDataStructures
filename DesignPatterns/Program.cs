@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DesignPatterns.Iterator;
 using DesignPatterns.Strategy;
+using DesignPatterns.Template;
 
 namespace DesignPatterns
 {
@@ -14,6 +15,7 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+
         }
     }
 }

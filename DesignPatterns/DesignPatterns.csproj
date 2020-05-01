@@ -62,6 +62,9 @@
     <Compile Include="Strategy\ImageStorage.cs" />
     <Compile Include="Strategy\JpegCompressor.cs" />
     <Compile Include="Strategy\PngCompressor.cs" />
+    <Compile Include="Template\AuditTrail.cs" />
+    <Compile Include="Template\Task.cs" />
+    <Compile Include="Template\TransferMoneyTask.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
