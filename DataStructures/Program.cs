@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataStructures.AVLTrees;
+using System;
 
 namespace DataStructures
 {
@@ -6,6 +7,12 @@ namespace DataStructures
     {
         public static void Main(string[] args)
         {
+            var avlTree = new AVLTree();
+            avlTree.Insert(5);
+            avlTree.Insert(10);
+            avlTree.Insert(13);
+            avlTree.Insert(15);
+
             var tree = new Tree();
             var tree2 = new Tree();
             int[] input = { 4, 1, 6, 0, 2, 5, 7, 3, 8 };
