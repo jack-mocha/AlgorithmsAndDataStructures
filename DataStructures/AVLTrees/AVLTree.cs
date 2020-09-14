@@ -45,7 +45,29 @@ namespace DataStructures.AVLTrees
 
             root.height = Math.Max(Height(root.left), Height(root.right)) + 1;
 
+            //balanceFactor = Height(L) - Height(R)
+            var balanceFactor = BalanceFactor(root);
+            if (IsLeftHeavy(root)) //left heavy
+                Console.WriteLine(root.val + "is left heavy.");
+            else if(IsRightHeavy(root)) //right heavy
+                Console.WriteLine(root.val + "is right heavy.");
+
             return root;
+        }
+
+        private int BalanceFactor(Node root)
+        {
+            return root == null ? 0 : Height(root.left) - Height(root.right);
+        }
+
+        private bool IsLeftHeavy(Node root)
+        {
+            return BalanceFactor(root) > 1;
+        }
+
+        private bool IsRightHeavy(Node root)
+        {
+            return BalanceFactor(root) < -1;
         }
 
         private bool IsLeaf(Node root)

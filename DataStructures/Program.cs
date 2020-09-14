@@ -8,10 +8,9 @@ namespace DataStructures
         public static void Main(string[] args)
         {
             var avlTree = new AVLTree();
-            avlTree.Insert(5);
             avlTree.Insert(10);
-            avlTree.Insert(13);
-            avlTree.Insert(15);
+            avlTree.Insert(20);
+            avlTree.Insert(30);
 
             var tree = new Tree();
             var tree2 = new Tree();
